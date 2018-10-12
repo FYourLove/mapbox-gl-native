@@ -6,8 +6,11 @@ import android.support.annotation.IntDef;
 import android.support.annotation.Keep;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+
 import com.mapbox.mapboxsdk.LibraryLoader;
 import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.log.Logger;
+import com.mapbox.mapboxsdk.maps.TelemetryDefinition;
 import com.mapbox.mapboxsdk.storage.FileSource;
 
 import java.lang.annotation.Retention;
@@ -44,6 +47,10 @@ public class OfflineRegion {
   private boolean isDeleted;
 
   private OfflineRegionDefinition definition;
+
+  private TelemetryDefinition telemetry;
+
+  private static final String TAG = "OfflineRegion";
 
   /**
    * Arbitrary binary region metadata. The contents are opaque to the SDK implementation;
@@ -228,6 +235,7 @@ public class OfflineRegion {
     this.definition = definition;
     this.metadata = metadata;
     initialize(offlineRegionPtr, fileSource);
+    telemetry = Mapbox.getTelemetry();
   }
 
   /*
@@ -262,6 +270,17 @@ public class OfflineRegion {
               if (observer != null) {
                 observer.onStatusChanged(status);
               }
+              try {
+                if (status.getDownloadState() == STATE_ACTIVE
+                        && status.getCompletedResourceSize() == 0) {
+                  telemetry.onOfflineDownloadStart(definition);
+
+                } else if (status.isComplete()) {
+                  telemetry.onOfflineDownloadEndSuccess(definition, status);
+                }
+              } catch (NullPointerException exception) {
+                Logger.e(TAG, "No telemetry set");
+              }
             }
           });
         }
@@ -275,6 +294,11 @@ public class OfflineRegion {
             public void run() {
               if (observer != null) {
                 observer.onError(error);
+              }
+              try {
+                telemetry.onOfflineDownloadEndFailure(definition, error);
+              } catch (NullPointerException exception) {
+                Logger.e(TAG, "No telemetry set");
               }
             }
           });
