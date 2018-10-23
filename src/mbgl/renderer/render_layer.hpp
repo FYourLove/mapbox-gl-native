@@ -43,6 +43,9 @@ public:
     // Returns true if the layer has a pattern property and is actively crossfading.
     virtual bool hasCrossfade() const = 0;
 
+    // Returns true if the layer requires 3D rendering pass.
+    virtual bool has3D() const;
+
     // Check whether this layer is of the given subtype.
     template <class T>
     bool is() const;

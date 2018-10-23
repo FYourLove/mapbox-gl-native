@@ -60,6 +60,10 @@ const std::string& RenderLayer::getID() const {
     return baseImpl->id;
 }
 
+bool RenderLayer::has3D() const {
+    return false;
+}
+
 bool RenderLayer::hasRenderPass(RenderPass pass) const {
     return bool(passes & pass);
 }

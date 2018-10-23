@@ -17,6 +17,7 @@ public:
     void evaluate(const PropertyEvaluationParameters&) override;
     bool hasTransition() const override;
     bool hasCrossfade() const override;
+    bool has3D() const final;
     void render(PaintParameters&, RenderSource*) override;
 
     bool queryIntersectsFeature(

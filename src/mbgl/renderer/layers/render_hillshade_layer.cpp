@@ -60,6 +60,10 @@ bool RenderHillshadeLayer::hasCrossfade() const {
     return false;
 }
 
+bool RenderHillshadeLayer::has3D() const {
+    return true;
+}
+
 void RenderHillshadeLayer::render(PaintParameters& parameters, RenderSource* src) {
     if (parameters.pass != RenderPass::Translucent && parameters.pass != RenderPass::Pass3D)
         return;

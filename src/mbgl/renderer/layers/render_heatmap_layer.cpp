@@ -49,6 +49,10 @@ bool RenderHeatmapLayer::hasCrossfade() const {
     return false;
 }
 
+bool RenderHeatmapLayer::has3D() const {
+    return true;
+}
+
 void RenderHeatmapLayer::render(PaintParameters& parameters, RenderSource*) {
     if (parameters.pass == RenderPass::Opaque) {
         return;
