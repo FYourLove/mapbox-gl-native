@@ -293,5 +293,8 @@ float RenderLineLayer::getLineWidth(const GeometryTileFeature& feature, const fl
     }
 }
 
+bool RenderLineLayer::needsClipping() const {
+    return true;
+}
 
 } // namespace mbgl

@@ -57,6 +57,9 @@ public:
 
     const style::LineLayer::Impl& impl() const;
 
+protected:
+    bool needsClipping() const final;
+
 private:
     float getLineWidth(const GeometryTileFeature&, const float) const;
     CrossfadeParameters crossfade;

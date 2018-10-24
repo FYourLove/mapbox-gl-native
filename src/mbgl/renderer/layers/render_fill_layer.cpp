@@ -265,5 +265,8 @@ bool RenderFillLayer::queryIntersectsFeature(
     return util::polygonIntersectsMultiPolygon(translatedQueryGeometry.value_or(queryGeometry), feature.getGeometries());
 }
 
+bool RenderFillLayer::needsClipping() const {
+    return true;
+}
 
 } // namespace mbgl

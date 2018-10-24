@@ -10,8 +10,9 @@
 #include <mbgl/renderer/layers/render_symbol_layer.hpp>
 #include <mbgl/renderer/layers/render_heatmap_layer.hpp>
 #include <mbgl/renderer/paint_parameters.hpp>
-#include <mbgl/style/types.hpp>
 #include <mbgl/renderer/render_tile.hpp>
+#include <mbgl/style/types.hpp>
+#include <mbgl/tile/tile.hpp>
 #include <mbgl/util/logging.hpp>
 
 namespace mbgl {
@@ -75,8 +76,40 @@ bool RenderLayer::needsRendering(float zoom) const {
            && baseImpl->maxZoom >= zoom;
 }
 
-void RenderLayer::setRenderTiles(std::vector<std::reference_wrapper<RenderTile>> tiles) {
-    renderTiles = std::move(tiles);
+void RenderLayer::setRenderTiles(RenderTiles tiles, const TransformState& state) {
+    renderTiles = filterRenderTiles(std::move(tiles));
+    sortRenderTiles(state);
+}
+
+RenderLayer::RenderTiles RenderLayer::filterRenderTiles(RenderTiles tiles) const {
+    return filterRenderTiles(std::move(tiles), [](const auto& tile){ return !tile.tile.isRenderable() && tile.tile.holdForFade(); });
+}
+
+void RenderLayer::sortRenderTiles(const TransformState&) {
+    std::sort(renderTiles.begin(), renderTiles.end(), [](const auto& a, const auto& b) { return a.get().id < b.get().id; });
+}
+
+// We only need clipping when we're drawing fill or line layers.
+bool RenderLayer::needsClipping() const {
+    return false;
+}
+
+RenderLayer::RenderTiles RenderLayer::filterRenderTiles(RenderTiles tiles, const std::function<bool (RenderTile&)>& filter) const {
+    RenderTiles filtered;
+
+    for (auto& tileRef : tiles) {
+        auto& tile = tileRef.get();
+        if (filter(tile)) {
+            continue;
+        }
+
+        if (tile.tile.getBucket(*baseImpl)) {
+            tile.used = true;
+            tile.needsClipping = needsClipping();
+            filtered.emplace_back(tile);
+        }
+    }
+    return filtered;
 }
 
 void RenderLayer::markContextDestroyed() {

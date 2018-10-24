@@ -41,6 +41,10 @@ public:
     style::FillPaintProperties::PossiblyEvaluated evaluated;
 
     const style::FillLayer::Impl& impl() const;
+
+protected:
+    bool needsClipping() const final;
+
 private:
     CrossfadeParameters crossfade;
 
