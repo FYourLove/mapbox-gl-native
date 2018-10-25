@@ -94,6 +94,10 @@ bool RenderLayer::needsClipping() const {
     return false;
 }
 
+void RenderLayer::update() {
+    // no-op
+}
+
 RenderLayer::RenderTiles RenderLayer::filterRenderTiles(RenderTiles tiles, const std::function<bool (RenderTile&)>& filter) const {
     RenderTiles filtered;
 

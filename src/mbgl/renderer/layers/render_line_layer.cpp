@@ -297,4 +297,8 @@ bool RenderLineLayer::needsClipping() const {
     return true;
 }
 
+void RenderLineLayer::update() {
+    updateColorRamp();
+}
+
 } // namespace mbgl
