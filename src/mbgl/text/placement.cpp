@@ -62,24 +62,24 @@ Placement::Placement(const TransformState& state_, MapMode mapMode_, const bool 
     , collisionGroups(crossSourceCollisions)
 {}
 
-void Placement::placeLayer(RenderSymbolLayer& symbolLayer, const mat4& projMatrix, bool showCollisionBoxes) {
+void Placement::placeLayer(const RenderLayer& layer, const mat4& projMatrix, bool showCollisionBoxes) {
 
     std::unordered_set<uint32_t> seenCrossTileIDs;
 
-    for (RenderTile& renderTile : symbolLayer.renderTiles) {
+    for (const RenderTile& renderTile : layer.getRenderTiles()) {
         if (!renderTile.tile.isRenderable()) {
             continue;
         }
         assert(renderTile.tile.kind == Tile::Kind::Geometry);
         GeometryTile& geometryTile = static_cast<GeometryTile&>(renderTile.tile);
 
-        auto bucket = renderTile.tile.getBucket<SymbolBucket>(*symbolLayer.baseImpl);
+        auto bucket = renderTile.tile.getBucket<SymbolBucket>(*layer.baseImpl);
         if (!bucket) {
             continue;
         }
         SymbolBucket& symbolBucket = *bucket;
 
-        if (symbolBucket.bucketLeaderID != symbolLayer.getID()) {
+        if (symbolBucket.bucketLeaderID != layer.getID()) {
             // Only place this layer if it's the "group leader" for the bucket
             continue;
         }
@@ -276,20 +276,20 @@ void Placement::commit(const Placement& prevPlacement, TimePoint now) {
     fadeStartTime = placementChanged ? commitTime : prevPlacement.fadeStartTime;
 }
 
-void Placement::updateLayerOpacities(RenderSymbolLayer& symbolLayer) {
+void Placement::updateLayerOpacities(const RenderLayer& layer) {
     std::set<uint32_t> seenCrossTileIDs;
-    for (RenderTile& renderTile : symbolLayer.renderTiles) {
+    for (const RenderTile& renderTile : layer.getRenderTiles()) {
         if (!renderTile.tile.isRenderable()) {
             continue;
         }
 
-        auto bucket = renderTile.tile.getBucket<SymbolBucket>(*symbolLayer.baseImpl);
+        auto bucket = renderTile.tile.getBucket<SymbolBucket>(*layer.baseImpl);
         if (!bucket) {
             continue;
         }
         SymbolBucket& symbolBucket = *bucket;
 
-        if (symbolBucket.bucketLeaderID != symbolLayer.getID()) {
+        if (symbolBucket.bucketLeaderID != layer.getID()) {
             // Only update opacities this layer if it's the "group leader" for the bucket
             continue;
         }

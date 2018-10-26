@@ -46,6 +46,9 @@ public:
     // Returns true if the layer requires 3D rendering pass.
     virtual bool has3D() const;
 
+    // Returns true if the layer has symbols.
+    virtual bool hasSymbols() const;
+
     // Check whether this layer is of the given subtype.
     template <class T>
     bool is() const;
@@ -104,6 +107,8 @@ public:
     // similar to color ramp. Temporarily moved to the base.
     virtual void update();
 
+    const RenderTiles& getRenderTiles() const { return renderTiles; }
+
     friend std::string layoutKey(const RenderLayer&);
 
 protected:
@@ -118,10 +123,6 @@ protected:
     virtual bool needsClipping() const;
 
 protected:
-    // renderTiles are exposed directly to CrossTileSymbolIndex and Placement so they
-    // can update opacities in the symbol buckets immediately before rendering
-    friend class CrossTileSymbolIndex;
-    friend class Placement;
     // Stores current set of tiles to be rendered for this layer.
     std::vector<std::reference_wrapper<RenderTile>> renderTiles;
 

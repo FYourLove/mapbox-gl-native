@@ -94,6 +94,10 @@ bool RenderLayer::needsClipping() const {
     return false;
 }
 
+bool RenderLayer::hasSymbols() const {
+    return false;
+}
+
 void RenderLayer::update() {
     // no-op
 }

@@ -80,9 +80,9 @@ private:
 class Placement {
 public:
     Placement(const TransformState&, MapMode mapMode, const bool crossSourceCollisions);
-    void placeLayer(RenderSymbolLayer&, const mat4&, bool showCollisionBoxes);
+    void placeLayer(const RenderLayer&, const mat4&, bool showCollisionBoxes);
     void commit(const Placement& prevPlacement, TimePoint);
-    void updateLayerOpacities(RenderSymbolLayer&);
+    void updateLayerOpacities(const RenderLayer&);
     float symbolFadeChange(TimePoint now) const;
     bool hasTransitions(TimePoint now) const;
 

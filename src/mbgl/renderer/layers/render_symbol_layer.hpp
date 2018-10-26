@@ -65,6 +65,7 @@ public:
     void evaluate(const PropertyEvaluationParameters&) override;
     bool hasTransition() const override;
     bool hasCrossfade() const override;
+    bool hasSymbols() const final;
     void render(PaintParameters&, RenderSource*) override;
 
     style::IconPaintProperties::PossiblyEvaluated iconPaintProperties() const;
