@@ -107,6 +107,9 @@ public:
     // similar to color ramp. Temporarily moved to the base.
     virtual void update();
 
+    // TODO: Only for background layers.
+    virtual optional<Color> getSolidBackground() const;
+
     const RenderTiles& getRenderTiles() const { return renderTiles; }
 
     friend std::string layoutKey(const RenderLayer&);
