@@ -25,6 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
  alternatively cluster the source using the `MGLShapeSourceOptionClustered`
  option and render the data using an `MGLCircleStyleLayer` or
  `MGLSymbolStyleLayer`.
+ 
+ #### Related examples
+ See the <a
+ href="https://www.mapbox.com/ios-sdk/maps/examples/heatmap-example/">Create a
+ heatmap layer</a> example to learn how to add this style layer to your map.
 
  You can access an existing heatmap style layer using the
  `-[MGLStyle layerWithIdentifier:]` method if you know its identifier;

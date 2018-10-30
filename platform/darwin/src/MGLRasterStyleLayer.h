@@ -45,6 +45,13 @@ typedef NS_ENUM(NSUInteger, MGLRasterResamplingMode) {
  register an image for use as an icon or pattern, use the `-[MGLStyle
  setImage:forName:]` method. To configure a point annotation’s image, use the
  `MGLAnnotationImage` class.
+ 
+ #### Related examples
+ See the <a
+ href="https://www.mapbox.com/ios-sdk/maps/examples/image-source/">Add an
+ image</a> and <a
+ href="https://www.mapbox.com/ios-sdk/maps/examples/source-custom-raster/">Add
+ raster imagery</a> examples to learn how to add imagery with this style layer.
 
  You can access an existing raster style layer using the
  `-[MGLStyle layerWithIdentifier:]` method if you know its identifier;

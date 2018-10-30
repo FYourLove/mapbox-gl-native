@@ -33,6 +33,11 @@ typedef NS_ENUM(NSUInteger, MGLFillExtrusionTranslationAnchor) {
  an `MGLVectorTileSource` object, or they can be `MGLPolygon`,
  `MGLPolygonFeature`, `MGLMultiPolygon`, or `MGLMultiPolygonFeature` instances
  in an `MGLShapeSource` or `MGLComputedShapeSource` object.
+ 
+  #### Related examples
+ See the <a
+ href="https://www.mapbox.com/ios-sdk/maps/examples/extrusions/">Display 3D
+ buildings</a> example to learn how to add and style 3D layers to a map.
 
  You can access an existing fill-extrusion style layer using the
  `-[MGLStyle layerWithIdentifier:]` method if you know its identifier;

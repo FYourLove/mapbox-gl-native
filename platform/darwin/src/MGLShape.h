@@ -29,6 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
  shapes collectively using a concrete instance of `MGLVectorStyleLayer`.
  Alternatively, you can add some kinds of shapes directly to a map view as
  annotations or overlays.
+ 
  */
 MGL_EXPORT
 @interface MGLShape : NSObject <MGLAnnotation, NSSecureCoding>

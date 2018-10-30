@@ -32,6 +32,15 @@ typedef NS_ENUM(NSUInteger, MGLFillTranslationAnchor) {
  `MGLVectorTileSource` object, or they can be `MGLPolygon`, `MGLPolygonFeature`,
  `MGLMultiPolygon`, or `MGLMultiPolygonFeature` instances in an `MGLShapeSource`
  or `MGLComputedShapeSource` object.
+ 
+ #### Related examples
+ See the <a
+ href="https://www.mapbox.com/ios-sdk/maps/examples/select-layer/">Select a
+ feature within a layer</a> example to learn how to use a `TERNARY` expression
+ to modify the `fillOpacity` of an `MGLFillStyleLayer` object. See the <a
+ href="https://www.mapbox.com/ios-sdk/maps/examples/fill-pattern/">Add a pattern
+ to a polygon</a> example to learn how to use an image to add pattern to the
+ features styled by a `MGLFillStyleLayer`.
 
  You can access an existing fill style layer using the
  `-[MGLStyle layerWithIdentifier:]` method if you know its identifier;

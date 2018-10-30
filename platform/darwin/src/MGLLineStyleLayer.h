@@ -82,6 +82,15 @@ typedef NS_ENUM(NSUInteger, MGLLineTranslationAnchor) {
  `MGLVectorTileSource` object, or they can be `MGLPolyline`,
  `MGLPolylineFeature`, `MGLMultiPolyline`, or `MGLMultiPolylineFeature`
  instances in an `MGLShapeSource` or `MGLComputedShapeSource` object.
+ 
+ #### Related examples
+  See the <a
+ href="https://www.mapbox.com/ios-sdk/maps/examples/shape-collection/">Add
+ multiple shapes from a single shape source</a> example to learn how to add a
+ line to your map using this style layer. See the <a
+ href="https://www.mapbox.com/ios-sdk/maps/examples/runtime-add-line/">Add a
+ line style layer from GeoJSON</a> example to learn how to add and style line
+ data to an `MGLMapView` object at runtime.
 
  You can access an existing line style layer using the
  `-[MGLStyle layerWithIdentifier:]` method if you know its identifier;

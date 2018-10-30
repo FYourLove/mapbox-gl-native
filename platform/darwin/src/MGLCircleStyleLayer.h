@@ -71,6 +71,16 @@ typedef NS_ENUM(NSUInteger, MGLCircleTranslationAnchor) {
  To display circles on the map whose radii correspond to real-world distances,
  use many-sided regular polygons and configure their appearance using an
  `MGLFillStyleLayer` object.
+ 
+ #### Related examples
+ See the <a
+ href="https://www.mapbox.com/ios-sdk/maps/examples/dds-circle-layer/">Data-driven
+ circles</a>, <a
+ href="https://www.mapbox.com/ios-sdk/maps/examples/shape-collection/">Add
+ multiple shapes from a single shape source</a>, and <a
+ href="https://www.mapbox.com/ios-sdk/maps/examples/clustering/">Cluster point
+ data</a> examples to learn how to add circles to your map using this style
+ layer.
 
  You can access an existing circle style layer using the
  `-[MGLStyle layerWithIdentifier:]` method if you know its identifier;

@@ -58,6 +58,9 @@ NS_INLINE MGLSphericalPosition MGLSphericalPositionMake(CGFloat radial, CLLocati
 
 /**
  An `MGLLight` object represents the light source for extruded geometries in `MGLStyle`.
+
+#### Related examples
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/light-example/">Adjust light of 3D buildings</a> to learn how to create and modify the light source for 3D geometries.
  */
 MGL_EXPORT
 @interface MGLLight : NSObject
@@ -100,6 +103,12 @@ MGL_EXPORT
  top of the viewport, or 0° when `MGLLight.anchor` is set to `MGLLightAnchorMap`
  corresponds to due north, and degrees proceed clockwise), and polar indicates
  the height of the light (from 0°, directly above, to 180°, directly below).
+ 
+ #### Related examples
+ See the <a
+ href="https://www.mapbox.com/ios-sdk/maps/examples/light-example/">Adjust light
+ of 3D buildings</a> example to learn how to create and modify the position of
+ value of an `MGLLight` object for 3D geometries.
  
  The default value of this property is an expression that evaluates to an
  `MGLSphericalPosition` struct set to 1.15 radial, 210 azimuthal and 30 polar.

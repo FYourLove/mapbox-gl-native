@@ -349,6 +349,14 @@ typedef NS_ENUM(NSUInteger, MGLTextTranslationAnchor) {
  These features can come from vector tiles loaded by an `MGLVectorTileSource`
  object, or they can be `MGLShape` or `MGLFeature` instances in an
  `MGLShapeSource` or `MGLComputedShapeSource` object.
+ 
+ #### Related examples
+ See the <a
+ href="https://www.mapbox.com/ios-sdk/maps/examples/runtime-multiple-annotations/">Dynamically
+ style interactive points</a> and <a
+ href="https://www.mapbox.com/ios-sdk/maps/examples/clustering-with-images/">Use
+ images to cluster point data</a> examples learn how to style data on your map
+ using this layer.
 
  You can access an existing symbol style layer using the
  `-[MGLStyle layerWithIdentifier:]` method if you know its identifier;
@@ -496,6 +504,12 @@ MGL_EXPORT
  braces (e.g., `{token}`) is replaced with the value of the named attribute.
  Tokens inside non-constant expressions are ignored; instead, use `mgl_join:`
  and key path expressions.
+ 
+ #### Related examples
+ See the <a
+ href="https://www.mapbox.com/ios-sdk/maps/examples/clustering-with-images/">Use
+ images to cluster point data</a> example to learn how to dynamically set your
+ icon's with an NSExpression.
  
  This attribute corresponds to the <a
  href="https://www.mapbox.com/mapbox-gl-style-spec/#layout-symbol-icon-image"><code>icon-image</code></a>
@@ -1057,6 +1071,14 @@ MGL_EXPORT
  braces (e.g., `{token}`) is replaced with the value of the named attribute.
  Tokens inside non-constant expressions are ignored; instead, use `mgl_join:`
  and key path expressions.
+ 
+  #### Related examples
+ See the <a
+ href="https://www.mapbox.com/ios-sdk/maps/examples/clustering/">Cluster point
+ data</a> and <a
+ href="https://www.mapbox.com/ios-sdk/maps/examples/clustering-with-images/">Use
+ images to cluster point data</a> to learn how to use an expression to set this
+ attribute to the number of markers within a cluster.
  
  The default value of this property is an expression that evaluates to the empty
  string. Set this property to `nil` to reset it to the default value.
