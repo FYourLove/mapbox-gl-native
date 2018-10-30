@@ -32,7 +32,7 @@ const style::SymbolLayer::Impl& RenderSymbolLayer::impl() const {
 }
 
 std::unique_ptr<Bucket> RenderSymbolLayer::createBucket(const BucketParameters&, const std::vector<const RenderLayer*>&) const {
-    assert(false); // Should be calling createLayout() instead.
+    assert(!requiresLayout()); // Should be calling createLayout() instead.
     return nullptr;
 }
 
@@ -46,6 +46,10 @@ std::unique_ptr<Layout> RenderSymbolLayer::createLayout(const BucketParameters& 
                                           std::move(layer),
                                           imageDependencies,
                                           glyphDependencies);
+}
+
+bool RenderSymbolLayer::requiresLayout() const {
+    return true;
 }
 
 void RenderSymbolLayer::transition(const TransitionParameters& parameters) {

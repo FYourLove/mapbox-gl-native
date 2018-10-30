@@ -26,7 +26,7 @@ const style::FillLayer::Impl& RenderFillLayer::impl() const {
 }
 
 std::unique_ptr<Bucket> RenderFillLayer::createBucket(const BucketParameters&, const std::vector<const RenderLayer*>&) const {
-    assert(false); // Should be calling createLayout() instead.
+    assert(!requiresLayout()); // Should be calling createLayout() instead.
     return nullptr;
 }
 
@@ -37,6 +37,10 @@ RenderFillLayer::createLayout(const BucketParameters& parameters,
                               GlyphDependencies&,
                               ImageDependencies& imageDependencies) const {
     return std::make_unique<PatternLayout<FillBucket>>(parameters, group, std::move(layer), imageDependencies);
+}
+
+bool RenderFillLayer::requiresLayout() const {
+    return true;
 }
 
 void RenderFillLayer::transition(const TransitionParameters& parameters) {

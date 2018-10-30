@@ -80,6 +80,7 @@ public:
                                                std::unique_ptr<GeometryTileLayer>,
                                                GlyphDependencies&,
                                                ImageDependencies&) const override;
+    bool requiresLayout() const final;
 
     // Paint properties
     style::SymbolPaintProperties::Unevaluated unevaluated;

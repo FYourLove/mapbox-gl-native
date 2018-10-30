@@ -35,6 +35,7 @@ public:
     std::unique_ptr<Bucket> createBucket(const BucketParameters&, const std::vector<const RenderLayer*>&) const override;
     std::unique_ptr<Layout> createLayout(const BucketParameters&, const std::vector<const RenderLayer*>&,
                                          std::unique_ptr<GeometryTileLayer>, GlyphDependencies&, ImageDependencies&) const override;
+    bool requiresLayout() const final;
 
     // Paint properties
     style::FillPaintProperties::Unevaluated unevaluated;

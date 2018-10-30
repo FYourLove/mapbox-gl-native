@@ -128,6 +128,10 @@ void RenderLayer::markContextDestroyed() {
     // no-op
 }
 
+bool RenderLayer::requiresLayout() const {
+    return false;
+}
+
 void RenderLayer::checkRenderability(const PaintParameters& parameters,
                                      const uint32_t activeBindingCount) {
     // Only warn once for every layer.

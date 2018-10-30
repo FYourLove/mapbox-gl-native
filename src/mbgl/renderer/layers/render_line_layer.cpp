@@ -28,7 +28,7 @@ const style::LineLayer::Impl& RenderLineLayer::impl() const {
 }
 
 std::unique_ptr<Bucket> RenderLineLayer::createBucket(const BucketParameters&, const std::vector<const RenderLayer*>&) const {
-    assert(false); // Should be calling createLayout() instead.
+    assert(!requiresLayout()); // Should be calling createLayout() instead.
     return nullptr;
 }
 
@@ -38,6 +38,10 @@ std::unique_ptr<Layout> RenderLineLayer::createLayout(const BucketParameters& pa
                                                       GlyphDependencies&,
                                                       ImageDependencies& imageDependencies) const {
     return std::make_unique<PatternLayout<LineBucket>>(parameters, group, std::move(layer), imageDependencies);
+}
+
+bool RenderLineLayer::requiresLayout() const {
+    return true;
 }
 
 void RenderLineLayer::transition(const TransitionParameters& parameters) {

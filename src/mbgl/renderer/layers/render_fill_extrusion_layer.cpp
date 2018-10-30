@@ -28,10 +28,9 @@ const style::FillExtrusionLayer::Impl& RenderFillExtrusionLayer::impl() const {
 }
 
 std::unique_ptr<Bucket> RenderFillExtrusionLayer::createBucket(const BucketParameters&, const std::vector<const RenderLayer*>&) const {
-    assert(false); // Should be calling createLayout() instead.
+    assert(!requiresLayout()); // Should be calling createLayout() instead.
     return nullptr;
 }
-
 
 std::unique_ptr<Layout> RenderFillExtrusionLayer::createLayout(const BucketParameters& parameters,
                         const std::vector<const RenderLayer*>& group,
@@ -39,6 +38,10 @@ std::unique_ptr<Layout> RenderFillExtrusionLayer::createLayout(const BucketParam
                         GlyphDependencies&,
                         ImageDependencies& imageDependencies) const {
     return std::make_unique<PatternLayout<FillExtrusionBucket>>(parameters, group, std::move(layer), imageDependencies);
+}
+
+bool RenderFillExtrusionLayer::requiresLayout() const {
+    return true;
 }
 
 void RenderFillExtrusionLayer::transition(const TransitionParameters& parameters) {
