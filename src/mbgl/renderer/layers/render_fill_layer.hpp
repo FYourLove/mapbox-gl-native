@@ -51,11 +51,6 @@ private:
 
 };
 
-template <>
-inline bool RenderLayer::is<RenderFillLayer>() const {
-    return type == style::LayerType::Fill;
-}
-
 inline const RenderFillLayer* toRenderFillLayer(const RenderLayer* layer) {
     return static_cast<const RenderFillLayer*>(layer);
 }
