@@ -52,7 +52,9 @@ NS_ASSUME_NONNULL_BEGIN
  geometry in GeoJSON.
  
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/annotation-models/">Annotation models</a> example to learn how to add an `MGLPolyine` object to your map.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/annotation-models/">
+ Annotation models</a> example to learn how to add an `MGLPolyine` object to
+ your map.
  */
 MGL_EXPORT
 @interface MGLPolyline : MGLMultiPoint <MGLOverlay>

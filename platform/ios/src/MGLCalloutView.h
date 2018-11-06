@@ -13,7 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
  use the optional methods available in the `MGLCalloutViewDelegate` protocol.
  
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/custom-callout/">Display custom views as callouts</a> example to learn how to customize an `MGLCalloutView`.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/custom-callout/">
+ Display custom views as callouts</a> example to learn how to customize an
+ `MGLCalloutView`.
  */
 @protocol MGLCalloutView <NSObject>
 

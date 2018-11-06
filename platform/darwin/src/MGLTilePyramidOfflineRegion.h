@@ -14,7 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
  use the MGLShapeOfflineRegion class instead.
  
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/offline-pack/">Download an offline map</a> example to learn how to define an offline region to be downloaded to a user's device.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/offline-pack/">
+ Download an offline map</a> example to learn how to define an offline region
+ to be downloaded to a user's device.
  */
 MGL_EXPORT
 @interface MGLTilePyramidOfflineRegion : NSObject <MGLOfflineRegion, NSSecureCoding, NSCopying>

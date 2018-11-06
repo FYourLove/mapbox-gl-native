@@ -390,7 +390,9 @@ NS_ASSUME_NONNULL_BEGIN
  @return A color to use for the shape outline.
  
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/annotation-models/">Annotation models</a> example to learn how to modify the outline color of ang `MGLShape` object that has been added to your map as an annotation.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/annotation-models/">
+ Annotation models</a> example to learn how to modify the outline color of an
+ `MGLShape` object that has been added to your map as an annotation.
  */
 - (UIColor *)mapView:(MGLMapView *)mapView strokeColorForShapeAnnotation:(MGLShape *)annotation;
 
@@ -408,7 +410,9 @@ NS_ASSUME_NONNULL_BEGIN
  @return The polygon’s interior fill color.
  
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/polygon/">Add a polygon annotation</a> example to learn how to modify the color of a an `MGLPolygon` at runtime.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/polygon/">Add
+ a polygon annotation</a> example to learn how to modify the color of a an
+ `MGLPolygon` at runtime.
  */
 - (UIColor *)mapView:(MGLMapView *)mapView fillColorForPolygonAnnotation:(MGLPolygon *)annotation;
 
@@ -422,9 +426,10 @@ NS_ASSUME_NONNULL_BEGIN
  @param annotation The annotation being rendered.
  @return A line width for the polyline, measured in points.
  
- 
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/line-geojson/">Add a line annotation from GeoJSON</a> example to learn how to modify the line width of an `MGLPolylineFeature` on your map.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/line-geojson/">
+ Add a line annotation from GeoJSON</a> example to learn how to modify the
+ line width of an `MGLPolylineFeature` on your map.
  */
 - (CGFloat)mapView:(MGLMapView *)mapView lineWidthForPolylineAnnotation:(MGLPolyline *)annotation;
 
@@ -454,7 +459,10 @@ NS_ASSUME_NONNULL_BEGIN
     want to display an annotation image instead.
  
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/annotation-view-image/">Add annotation views and images</a> example to learn how to specify what `MGLViewAnnotation` to use for given `MGLPointAnnotation` object on your map.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/annotation-view-image/">
+ Add annotation views and images</a> example to learn how to specify what
+ `MGLViewAnnotation` to use for a given `MGLPointAnnotation` object on your
+ map.
  */
 - (nullable MGLAnnotationView *)mapView:(MGLMapView *)mapView viewForAnnotation:(id <MGLAnnotation>)annotation;
 
@@ -498,7 +506,9 @@ NS_ASSUME_NONNULL_BEGIN
  @param annotation The annotation that was selected.
  
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/runtime-multiple-annotations/">Dynamically style interactive points</a> example to learn how to remove an annotation view if it has already been selected.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/runtime-multiple-annotations/">
+ Dynamically style interactive points</a> example to learn how to remove an
+ annotation view if it has already been selected.
  */
 - (void)mapView:(MGLMapView *)mapView didSelectAnnotation:(id <MGLAnnotation>)annotation;
 
@@ -575,7 +585,11 @@ NS_ASSUME_NONNULL_BEGIN
     callout.
  
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/annotation-view-image/">Add annotation views and images</a>, <a href="https://www.mapbox.com/ios-sdk/maps/examples/custom-callout/">Display custom views as callouts</a>, and <a href="https://www.mapbox.com/ios-sdk/maps/examples/default-callout/">Default callout usage</a> examples to learn how to show callouts for `MGLAnnotation` objects.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/annotation-view-image/">
+ Add annotation views and images</a>, <a href="https://www.mapbox.com/ios-sdk/maps/examples/custom-callout/">
+ Display custom views as callouts</a>, and <a href="https://www.mapbox.com/ios-sdk/maps/examples/default-callout/">
+ Default callout usage</a> examples to learn how to show callouts for
+ `MGLAnnotation` objects.
  */
 - (BOOL)mapView:(MGLMapView *)mapView annotationCanShowCallout:(id <MGLAnnotation>)annotation;
 
@@ -595,7 +609,9 @@ NS_ASSUME_NONNULL_BEGIN
     default callout view.
  
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/custom-callout/">Display custom views as callouts</a> example to learn how to customize an `MGLAnnotation` object's `MGLCalloutView`.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/custom-callout/">
+ Display custom views as callouts</a> example to learn how to customize an
+ `MGLAnnotation` object's `MGLCalloutView`.
  */
 - (nullable id <MGLCalloutView>)mapView:(MGLMapView *)mapView calloutViewForAnnotation:(id <MGLAnnotation>)annotation;
 
@@ -624,7 +640,9 @@ NS_ASSUME_NONNULL_BEGIN
  @return The accessory view to display.
  
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/default-callout/">Default callout usage</a> example to learn how to modify the view that is displayed on the left side of the standard callout bubble.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/default-callout/">
+ Default callout usage</a> example to learn how to modify the view that is
+ displayed on the left side of the standard callout bubble.
  */
 - (nullable UIView *)mapView:(MGLMapView *)mapView leftCalloutAccessoryViewForAnnotation:(id <MGLAnnotation>)annotation;
 
@@ -653,7 +671,9 @@ NS_ASSUME_NONNULL_BEGIN
  @return The accessory view to display.
  
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/default-callout/">Default callout usage</a> example to learn how to modify the view that is displayed on the right side of the standard callout bubble.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/default-callout/">
+ Default callout usage</a> example to learn how to modify the view that is
+ displayed on the right side of the standard callout bubble.
  */
 - (nullable UIView *)mapView:(MGLMapView *)mapView rightCalloutAccessoryViewForAnnotation:(id <MGLAnnotation>)annotation;
 
@@ -681,7 +701,9 @@ NS_ASSUME_NONNULL_BEGIN
  @param control The control that was tapped.
  
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/default-callout/">Default callout usage</a> example to learn how to trigger an action when the standard callout bubble's accesory control is tapped.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/default-callout/">
+ Default callout usage</a> example to learn how to trigger an action when the
+ standard callout bubble's accessory control is tapped.
  */
 - (void)mapView:(MGLMapView *)mapView annotation:(id <MGLAnnotation>)annotation calloutAccessoryControlTapped:(UIControl *)control;
 
@@ -702,7 +724,9 @@ NS_ASSUME_NONNULL_BEGIN
  @param annotation The annotation whose callout was tapped.
  
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/custom-callout/">Display custom views as callouts</a> example to learn how to trigger an action when an `MGLAnnotation`s `MGLCalloutView` is tapped.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/custom-callout/">
+ Display custom views as callouts</a> example to learn how to trigger an
+ action when an `MGLAnnotation`s `MGLCalloutView` is tapped.
  */
 - (void)mapView:(MGLMapView *)mapView tapOnCalloutForAnnotation:(id <MGLAnnotation>)annotation;
 

@@ -54,7 +54,9 @@ FOUNDATION_EXTERN MGL_EXPORT MGLExceptionName const MGLRedundantSourceIdentifier
     that it's safe to modify the map's style.
  
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/default-styles/">Default styles</a> example to learn how to initialize an `MGLMapView` object with a Mapbox default style using `MGLStyle`'s class methods.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/default-styles/">
+ Default styles</a> example to learn how to initialize an `MGLMapView` object
+ with a Mapbox default style using `MGLStyle`'s class methods.
  */
 MGL_EXPORT
 @interface MGLStyle : NSObject
@@ -182,7 +184,9 @@ MGL_EXPORT
     significantly from version to version.
  
  #### Related example
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/satellite-style/">Satellite styles</a> example to learn how to initialize a map with the Mapbox Satellite style.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/satellite-style/">
+ Satellite styles</a> example to learn how to initialize a map with the Mapbox
+ Satellite style.
  */
 @property (class, nonatomic, readonly) NSURL *satelliteStyleURL;
 
@@ -216,7 +220,9 @@ MGL_EXPORT
     change significantly from version to version.
  
  #### Related example
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/satellite-style/">Satellite styles</a> example to learn how to initialize a map with the Mapbox Satellite Streets style.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/satellite-style/">
+ Satellite styles</a> example to learn how to initialize a map with the Mapbox
+ Satellite Streets style.
  */
 @property (class, nonatomic, readonly) NSURL *satelliteStreetsStyleURL;
 
@@ -392,7 +398,9 @@ MGL_EXPORT
  @param sibling An existing layer in the style.
  
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/shape-collection/">Add multiple shapes from a single shape source</a> example to learn how to add a layer to your map below an existing layer.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/shape-collection/">
+ Add multiple shapes from a single shape source</a> example to learn how to
+ add a layer to your map below an existing layer.
  */
 - (void)insertLayer:(MGLStyleLayer *)layer belowLayer:(MGLStyleLayer *)sibling;
 
@@ -415,7 +423,9 @@ MGL_EXPORT
  @param sibling An existing layer in the style.
  
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/image-source/">Add an image</a> example to learn how to add a layer to your map above an existing layer.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/image-source/">
+ Add an image</a> example to learn how to add a layer to your map above an
+ existing layer.
  */
 - (void)insertLayer:(MGLStyleLayer *)layer aboveLayer:(MGLStyleLayer *)sibling;
 
@@ -476,7 +486,10 @@ MGL_EXPORT
  @param name The name of the image to set to the style.
  
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/clustering-with-images/">Use images to cluster point data</a> and <a href="https://www.mapbox.com/ios-sdk/maps/examples/clustering/">Cluster point data</a> examples to learn how to add images to your map using an `MGLStyle` object.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/clustering-with-images/">
+ Use images to cluster point data</a> and <a href="https://www.mapbox.com/ios-sdk/maps/examples/clustering/">
+ Cluster point data</a> examples to learn how to add images to your map using
+ an `MGLStyle` object.
  */
 - (void)setImage:(MGLImage *)image forName:(NSString *)name;
 

@@ -43,7 +43,9 @@ MGL_EXPORT
  ```
  
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/image-source/">Add an image</a> example to learn how to add an image to your map using `MGLImageSource`.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/image-source/">
+ Add an image</a> example to learn how to add an image to your map using
+ `MGLImageSource`.
  */
 MGL_EXPORT
 @interface MGLImageSource : MGLSource

@@ -84,7 +84,7 @@ typedef NS_ENUM(NSUInteger, MGLLineTranslationAnchor) {
  instances in an `MGLShapeSource` or `MGLComputedShapeSource` object.
  
  #### Related examples
-  See the <a
+ See the <a
  href="https://www.mapbox.com/ios-sdk/maps/examples/shape-collection/">Add
  multiple shapes from a single shape source</a> example to learn how to add a
  line to your map using this style layer. See the <a

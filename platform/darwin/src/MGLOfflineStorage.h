@@ -28,7 +28,9 @@ NS_ASSUME_NONNULL_BEGIN
  path.
  
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/offline-pack/">Download an offline map</a> example to learn how to calculate the progress of an offline download.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/offline-pack/">
+ Download an offline map</a> example to learn how to calculate the progress
+ of an offline download.
  */
 FOUNDATION_EXTERN MGL_EXPORT const NSNotificationName MGLOfflinePackProgressChangedNotification;
 
@@ -182,7 +184,9 @@ typedef NS_ENUM(NSUInteger, MGLResourceKind) {
  maintains a canonical collection of offline packs in its `packs` property.
  
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/offline-pack/">Download an offline map</a> example to learn how to create and register an offline pack for a defined region.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/offline-pack/">
+ Download an offline map</a> example to learn how to create and register an
+ offline pack for a defined region.
  */
 MGL_EXPORT
 @interface MGLOfflineStorage : NSObject

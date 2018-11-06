@@ -509,7 +509,7 @@ MGL_EXPORT
  See the <a
  href="https://www.mapbox.com/ios-sdk/maps/examples/clustering-with-images/">Use
  images to cluster point data</a> example to learn how to dynamically set your
- icon's with an NSExpression.
+ icons with an expression.
  
  This attribute corresponds to the <a
  href="https://www.mapbox.com/mapbox-gl-style-spec/#layout-symbol-icon-image"><code>icon-image</code></a>

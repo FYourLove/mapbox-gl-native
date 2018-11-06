@@ -11,7 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
  by the map view.
  
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/marker-image/">Mark a place on the map with an image</a> example to learn how use an image as a marker using `MGLAnnotationImage`. 
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/marker-image/">
+ Mark a place on the map with an image</a> example to learn how use an image
+ as a marker using `MGLAnnotationImage`. 
  */
 MGL_EXPORT
 @interface MGLAnnotationImage : NSObject <NSSecureCoding>

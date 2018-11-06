@@ -173,7 +173,9 @@ MGL_EXPORT
  @return An initialized shape source.
  
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/live-data/">Add live data</a> example to learn how to add live data to your map by updating the an `MGLShapeSource` object's `URL` property.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/live-data/">
+ Add live data</a> example to learn how to add live data to your map by
+ updating the an `MGLShapeSource` object's `URL` property.
  */
 - (instancetype)initWithIdentifier:(NSString *)identifier URL:(NSURL *)url options:(nullable NSDictionary<MGLShapeSourceOption, id> *)options NS_DESIGNATED_INITIALIZER;
 
@@ -205,7 +207,9 @@ MGL_EXPORT
  @return An initialized shape source.
  
  #### Related examples
- See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/runtime-animate-line/">Animate a line</a> example to learn how to animate line data by continously updating an `MGLShapeSource`'s `shape` attribute.
+ See the <a href="https://www.mapbox.com/ios-sdk/maps/examples/runtime-animate-line/">
+ Animate a line</a> example to learn how to animate line data by continously
+ updating an `MGLShapeSource`'s `shape` attribute.
  */
 - (instancetype)initWithIdentifier:(NSString *)identifier shape:(nullable MGLShape *)shape options:(nullable NSDictionary<MGLShapeSourceOption, id> *)options NS_DESIGNATED_INITIALIZER;
 
