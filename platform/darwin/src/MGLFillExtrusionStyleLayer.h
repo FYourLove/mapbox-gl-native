@@ -34,7 +34,7 @@ typedef NS_ENUM(NSUInteger, MGLFillExtrusionTranslationAnchor) {
  `MGLPolygonFeature`, `MGLMultiPolygon`, or `MGLMultiPolygonFeature` instances
  in an `MGLShapeSource` or `MGLComputedShapeSource` object.
  
-  #### Related examples
+ #### Related examples
  See the <a
  href="https://www.mapbox.com/ios-sdk/maps/examples/extrusions/">Display 3D
  buildings</a> example to learn how to add and style 3D layers on a map.
