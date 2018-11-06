@@ -1182,6 +1182,7 @@ public class MapView extends FrameLayout implements NativeMapView.ViewCallback {
         if (initialLoad) {
           mapboxMap.onPreMapReady();
           onMapReady();
+          mapboxMap.onPostMapReady();
         } else {
           mapboxMap.onFinishLoadingStyle();
         }

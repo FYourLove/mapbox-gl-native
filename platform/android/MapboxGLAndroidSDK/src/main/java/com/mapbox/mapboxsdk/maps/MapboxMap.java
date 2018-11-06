@@ -172,6 +172,17 @@ public final class MapboxMap {
   }
 
   /**
+   * Called when the OnMapReadyCallback has finished executing.
+   * <p>
+   * Invalidation of the camera position is required to update the added components in
+   * OnMapReadyCallback with the correct transformation.
+   * </p>
+   */
+  void onPostMapReady() {
+    transform.invalidateCameraPosition();
+  }
+
+  /**
    * Called when the map will start loading style.
    */
   void onStartLoadingMap() {
@@ -2101,17 +2112,6 @@ public final class MapboxMap {
     return locationComponent;
   }
 
-
-  /**
-   * Called when the OnMapReadyCallback has finished executing.
-   * <p>
-   * Invalidation of the camera position is required to update the added components in
-   * OnMapReadyCallback with the correct transformation.
-   * </p>
-   */
-  void onPostMapReady() {
-    transform.invalidateCameraPosition();
-  }
   //
   // Interfaces
   //
